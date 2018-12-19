@@ -1,7 +1,7 @@
-//store city
-function storeCityInLocalStorage(city){
+// store city
+function storeCityInLocalStorage(city) {
   let cities;
-  if(localStorage.getItem('cities') === null){
+  if (localStorage.getItem('cities') === null) {
     cities = [];
   } else {
     cities = JSON.parse(localStorage.getItem('cities'));
