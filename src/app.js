@@ -25,7 +25,7 @@ function getWeather(city, element){
   let temperature;
   let humidity;
   let pressure;
-  
+
   const t = document.createElement('p');
   const h = document.createElement('p');
   const p = document.createElement('p');
@@ -36,7 +36,6 @@ function getWeather(city, element){
         temperature = response.data.main.temp;
         humidity = response.data.main.humidity;
         pressure = response.data.main.pressure;
-        console.log(response.data);
         t.innerHTML ="Temperature: " + kelvinToCelsjus(temperature.toString()) + " &degC";
         h.innerHTML ="Humidity: " + humidity + " %";
         p.innerHTML ="Pressure: " + pressure + " hPa";
