@@ -11,8 +11,6 @@ const cityList = document.querySelector('.collection');
 const citySearch = document.querySelector('#citySearch');
 
 //load all event listeners
-
-
 function loadEventListeners() {
   //DOM load event
   document.addEventListener('DOMContentLoaded', getCities);
@@ -23,9 +21,11 @@ function loadEventListeners() {
 
 function getWeather(city, element){
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`;
+
   let temperature;
   let humidity;
   let pressure;
+  
   const t = document.createElement('p');
   const h = document.createElement('p');
   const p = document.createElement('p');
@@ -38,8 +38,8 @@ function getWeather(city, element){
         pressure = response.data.main.pressure;
         console.log(response.data);
         t.innerHTML ="Temperature: " + kelvinToCelsjus(temperature.toString()) + " &degC";
-        h.innerHTML ="Humidity: " + humidity;
-        p.innerHTML ="Pressure: " + pressure;
+        h.innerHTML ="Humidity: " + humidity + " %";
+        p.innerHTML ="Pressure: " + pressure + " hPa";
         // return element.appendChild(t);
         element.appendChild(t);
         element.appendChild(h);
