@@ -5,8 +5,8 @@ function removeCityFromLocalStorage(cityItem) {
   } else {
     cities = JSON.parse(localStorage.getItem('cities'));
   }
-  cities.forEach(function(city, index) {
-    //delete is a name of an icon and idk why (recurrence?) but its appended to city name
+  cities.forEach((city, index) => {
+    // delete is a name of an icon and idk why (recurrence?) but its appended to city name
     if (cityItem.firstChild.textContent === city) {
       cities.splice(index, 1);
     }
@@ -14,5 +14,5 @@ function removeCityFromLocalStorage(cityItem) {
   localStorage.setItem('cities', JSON.stringify(cities));
 }
 export {
-  removeCityFromLocalStorage
-}
+  removeCityFromLocalStorage,
+};
